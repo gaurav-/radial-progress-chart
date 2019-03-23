@@ -78,11 +78,11 @@ function RadialProgressChart(query, options) {
   });
 
   // add shadows defs
-  defs = self.svg.append("svg:defs");
+  /*defs = self.svg.append("svg:defs");
   var dropshadowId = "dropshadow-" + Math.random();
   var filter = defs.append("filter").attr("id", dropshadowId);
   if(self.options.shadow.width > 0) {
-    
+
     filter.append("feGaussianBlur")
       .attr("in", "SourceAlpha")
       .attr("stdDeviation", self.options.shadow.width)
@@ -98,7 +98,7 @@ function RadialProgressChart(query, options) {
   var feMerge = filter.append("feMerge");
   feMerge.append("feMergeNode").attr("in", "offsetBlur");
   feMerge.append("feMergeNode").attr("in", "SourceGraphic");
-
+  */
   // add inner text
   if (self.options.center) {
     self.svg.append("text")
@@ -144,7 +144,7 @@ function RadialProgressChart(query, options) {
     .data(series)
     .enter().append("g");
 
-  self.field.append("path").attr("class", "progress").attr("filter", "url(#" + dropshadowId +")");
+  self.field.append("path").attr("class", "progress");
 
   self.field.append("path").attr("class", "bg")
     .style("fill", function (item) {
